@@ -50,6 +50,20 @@ set MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>/<db>?retryWrites=t
 docker-compose up
 ```
 
+## Deploy (Render Backend + Netlify Frontend)
+
+1. Render backend env:
+- `NODE_ENV=production`
+- `JWT_SECRET=<strong-random-secret>`
+- `MONGODB_URI=<atlas-uri>`
+- `CORS_ORIGIN=http://localhost:5173,https://<your-netlify-site>.netlify.app`
+
+2. Netlify frontend settings:
+- Base directory: `frontend`
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Env var: `VITE_API_URL=https://<your-render-backend>.onrender.com`
+
 ## Troubleshooting
 
 1. Backend exits with Mongo error:
