@@ -31,7 +31,6 @@ PORT=5000
 NODE_ENV=development
 JWT_SECRET=replace_with_strong_secret
 MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>/<db>?retryWrites=true&w=majority
-CORS_ORIGIN=http://localhost:5173
 ```
 
 ### 2) Install and run backend
@@ -49,7 +48,7 @@ Create `frontend/.env`:
 ```env
 PORT=5173
 VITE_API_PROXY_TARGET=http://localhost:5000
-VITE_API_URL=https://your-backend-name.onrender.com
+VITE_API_URL=
 ```
 
 ### 4) Install and run frontend
@@ -79,5 +78,3 @@ Backend: `http://localhost:5000`
 ## Notes
 
 - If you are migrating old JSON data, import it into MongoDB Atlas separately.
-- For Render + Netlify deployments, set backend `CORS_ORIGIN` to both origins (comma-separated), for example:
-  - `CORS_ORIGIN=http://localhost:5173,https://your-site.netlify.app`
